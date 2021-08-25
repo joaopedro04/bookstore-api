@@ -11,7 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Livro implements Serializable{
+public class Livro implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -30,7 +30,6 @@ public class Livro implements Serializable{
         super();
     }
 
-
     public Livro(Integer id, String titulo, String nome_autor, String texto, Categoria categoria) {
         this.id = id;
         this.titulo = titulo;
@@ -38,8 +37,6 @@ public class Livro implements Serializable{
         this.texto = texto;
         this.categoria = categoria;
     }
-
-
 
     public Integer getId() {
         return this.id;
@@ -89,13 +86,14 @@ public class Livro implements Serializable{
             return false;
         }
         Livro livro = (Livro) o;
-        return Objects.equals(id, livro.id) && Objects.equals(titulo, livro.titulo) && Objects.equals(nome_autor, livro.nome_autor) && Objects.equals(texto, livro.texto) && Objects.equals(categoria, livro.categoria);
+        return Objects.equals(id, livro.id) && Objects.equals(titulo, livro.titulo)
+                && Objects.equals(nome_autor, livro.nome_autor) && Objects.equals(texto, livro.texto)
+                && Objects.equals(categoria, livro.categoria);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id, titulo, nome_autor, texto, categoria);
     }
-
 
 }

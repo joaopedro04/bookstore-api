@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Categoria implements Serializable{
+public class Categoria implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -24,7 +24,6 @@ public class Categoria implements Serializable{
 
     @OneToMany(mappedBy = "categoria")
     private List<Livro> livros = new ArrayList<>();
-
 
     public Categoria() {
         super();
@@ -77,14 +76,13 @@ public class Categoria implements Serializable{
             return false;
         }
         Categoria categoria = (Categoria) o;
-        return Objects.equals(id, categoria.id) && Objects.equals(nome, categoria.nome) && Objects.equals(descricao, categoria.descricao) && Objects.equals(livros, categoria.livros);
+        return Objects.equals(id, categoria.id) && Objects.equals(nome, categoria.nome)
+                && Objects.equals(descricao, categoria.descricao) && Objects.equals(livros, categoria.livros);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id, nome, descricao, livros);
-    }    
-
+    }
 
 }
-
